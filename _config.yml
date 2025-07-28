@@ -1,0 +1,29 @@
+# ABOUTME: Jekyll configuration file for personal website project
+# ABOUTME: Contains site metadata, build settings, and custom variables for homepage sections
+
+title: "Your Name"
+description: "Personal website and portfolio"
+url: "http://localhost:4000"
+baseurl: ""
+
+# Homepage settings
+homepage_latest_count: 3
+homepage_favourites_count: 3
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
