@@ -1,0 +1,109 @@
+// ABOUTME: Responsive styles and media queries for mobile-first design
+// ABOUTME: Implements CSS Grid system with 1/2/3 column breakpoints
+
+// Content grid system
+.content-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Responsive typography
+@media (max-width: 767px) {
+  body {
+    font-size: 15px;
+  }
+  
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  h3 { font-size: 1.15rem; }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  // Stack navigation vertically on mobile
+  header nav {
+    margin-top: 1rem;
+    
+    a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  // Horizontal navigation on tablet and up
+  header nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    a {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 17px;
+  }
+  
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.35rem; }
+  
+  .container {
+    padding: 0 2rem;
+  }
+  
+  // Homepage specific desktop layout
+  .home-sections {
+    .content-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    
+    section {
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+// Large desktop screens (27" Mac and similar)
+@media (min-width: 1440px) {
+  .home-sections {
+    .content-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    
+    .content-card-compact {
+      img {
+        height: 100px;
+      }
+      
+      .card-content {
+        padding: 0.5rem;
+        
+        h3 {
+          font-size: 0.9rem;
+        }
+        
+        p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

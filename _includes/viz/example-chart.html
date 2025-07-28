@@ -1,0 +1,144 @@
+<!-- ABOUTME: Example data visualization component using vanilla JavaScript -->
+<!-- ABOUTME: Creates a simple bar chart from JSON data with responsive design -->
+
+<div id="viz-{{ include.id | default: 'chart' }}" class="visualization">
+    <div class="viz-loading">Loading visualization...</div>
+</div>
+
+<script>
+(async function() {
+    const vizId = 'viz-{{ include.id | default: "chart" }}';
+    const container = document.getElementById(vizId);
+    
+    try {
+        // Load data from assets/data directory
+        const response = await fetch('{{ "/assets/data/" | append: include.data | relative_url }}');
+        const data = await response.json();
+        
+        // Clear loading message
+        container.innerHTML = '';
+        
+        // Create simple bar chart
+        const maxValue = Math.max(...data.map(d => d.value));
+        const chartWidth = container.offsetWidth || 400;
+        const chartHeight = 300;
+        
+        const chart = document.createElement('div');
+        chart.style.cssText = `
+            width: 100%;
+            height: ${chartHeight}px;
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 1rem 0;
+        `;
+        
+        data.forEach(item => {
+            const bar = document.createElement('div');
+            const barHeight = (item.value / maxValue) * (chartHeight - 60);
+            
+            bar.style.cssText = `
+                width: ${Math.max(chartWidth / data.length - 20, 30)}px;
+                height: ${barHeight}px;
+                background: #0066cc;
+                margin: 0 2px;
+                border-radius: 3px 3px 0 0;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                cursor: pointer;
+                transition: background 0.2s;
+            `;
+            
+            // Add hover effect
+            bar.addEventListener('mouseenter', () => {
+                bar.style.background = '#0052a3';
+            });
+            bar.addEventListener('mouseleave', () => {
+                bar.style.background = '#0066cc';
+            });
+            
+            // Add label
+            const label = document.createElement('div');
+            label.textContent = item.label;
+            label.style.cssText = `
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 12px;
+                color: #666;
+                white-space: nowrap;
+            `;
+            
+            // Add value tooltip
+            const value = document.createElement('div');
+            value.textContent = item.value;
+            value.style.cssText = `
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 11px;
+                color: #333;
+                background: rgba(255,255,255,0.9);
+                padding: 2px 6px;
+                border-radius: 3px;
+                opacity: 0;
+                transition: opacity 0.2s;
+            `;
+            
+            bar.addEventListener('mouseenter', () => {
+                value.style.opacity = '1';
+            });
+            bar.addEventListener('mouseleave', () => {
+                value.style.opacity = '0';
+            });
+            
+            bar.appendChild(label);
+            bar.appendChild(value);
+            chart.appendChild(bar);
+        });
+        
+        container.appendChild(chart);
+        
+        // Add title if provided
+        if ('{{ include.title }}') {
+            const title = document.createElement('h4');
+            title.textContent = '{{ include.title }}';
+            title.style.cssText = 'margin: 0 0 1rem 0; text-align: center;';
+            container.insertBefore(title, chart);
+        }
+        
+    } catch (error) {
+        console.error('Error loading visualization:', error);
+        container.innerHTML = '<p style="color: #666; font-style: italic;">Unable to load visualization data.</p>';
+    }
+})();
+</script>
+
+<style>
+.visualization {
+    margin: 2rem 0;
+    min-height: 320px;
+}
+
+.viz-loading {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 2rem;
+}
+
+@media (max-width: 767px) {
+    .visualization {
+        margin: 1rem 0;
+        min-height: 280px;
+    }
+}
+</style>

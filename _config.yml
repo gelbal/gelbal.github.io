@@ -3,7 +3,7 @@
 
 title: "Your Name"
 description: "Personal website and portfolio"
-url: "http://localhost:4000"
+url: "https://yourdomain.com"
 baseurl: ""
 
 # Homepage settings
@@ -19,6 +19,20 @@ collections:
   posts:
     output: true
     permalink: /:title/
+
+# GitHub Pages settings
+github: [metadata]
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - spec.md
+  - prompt_plan.md
+  - todo.md
+  - test-card.html
+  - .specstory/
 
 # Defaults
 defaults:

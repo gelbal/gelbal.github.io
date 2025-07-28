@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<!-- ABOUTME: Tag page layout template for displaying posts with specific tag -->
+<!-- ABOUTME: Shows all posts that contain the specified tag -->
+
+<h1>{{ page.tag | capitalize }}</h1>
+
+{% assign tag_posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
+
+{% if tag_posts.size > 0 %}
+    <div class="content-grid">
+        {% for post in tag_posts %}
+            {% include content-card.html post=post show_excerpt=false %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div>
+        <p>No posts found with the tag "{{ page.tag }}".</p>
+        <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
+    </div>
+{% endif %}

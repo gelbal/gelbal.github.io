@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<!-- ABOUTME: Essays page layout with category posts and Topics section -->
+<!-- ABOUTME: Combines category filtering with homepage-style Topics display -->
+
+<h1>{{ page.title }}</h1>
+
+{% assign category_posts = site.posts | where: 'category', page.category %}
+
+{% if category_posts.size > 0 %}
+    <div class="content-grid">
+        {% for post in category_posts %}
+            {% include content-card.html post=post show_excerpt=false %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div>
+        <p>No posts found in the {{ page.category | capitalize }} category.</p>
+        <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
+    </div>
+{% endif %}
+
+<section class="topics-section">
+    {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+    
+    <h2>Topics</h2>
+    <ul>
+        {% for tag in all_tags %}
+            {% unless tag == 'latest' or tag == 'favourite' %}
+                <li>
+                    <a href="/topics/{{ tag | slugify }}">{{ tag | capitalize }}</a>
+                </li>
+            {% endunless %}
+        {% endfor %}
+    </ul>
+</section>

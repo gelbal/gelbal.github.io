@@ -1,6 +1,10 @@
 <!-- ABOUTME: Site header include with title and navigation placeholder -->
-<!-- ABOUTME: Contains main site branding and will hold the navigation menu -->
+<!-- ABOUTME: Contains main site branding and navigation menu with responsive layout -->
 <header>
     <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <!-- Navigation will go here -->
+    <nav>
+        {% for item in site.data.navigation %}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% endfor %}
+    </nav>
 </header>

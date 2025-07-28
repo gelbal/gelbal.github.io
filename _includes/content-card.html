@@ -1,0 +1,18 @@
+<!-- ABOUTME: Reusable content card component for displaying posts -->
+<!-- ABOUTME: Accepts post parameter and optional show_excerpt parameter for flexible display -->
+<article class="content-card">
+    <a href="{{ include.post.url | relative_url }}" style="text-decoration: none; color: inherit; display: block;">
+        {% if include.post.thumbnail %}
+            <img src="{{ include.post.thumbnail | relative_url }}" 
+                 alt="{{ include.post.title }}">
+        {% endif %}
+        
+        <div class="card-content">
+            <h3>{{ include.post.title }}</h3>
+            
+            {% if include.show_excerpt and include.post.excerpt %}
+                <p>{{ include.post.excerpt | strip_html | truncatewords: 25 }}</p>
+            {% endif %}
+        </div>
+    </a>
+</article>

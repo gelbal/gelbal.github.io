@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<!-- ABOUTME: Homepage layout template with dynamic content sections -->
+<!-- ABOUTME: Includes Latest section and placeholder for additional sections -->
+
+{{ content }}
+
+<div class="home-sections">
+    <section class="latest-section">
+        {% assign latest_posts = site.posts | where_exp: "post", "post.tags contains 'latest'" | limit: site.homepage_latest_count %}
+        
+        {% if latest_posts.size > 0 %}
+            <h2>Latest</h2>
+            <div class="content-grid">
+                {% for post in latest_posts %}
+                    {% include content-card-compact.html post=post show_excerpt=true %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                <h2>Latest</h2>
+                <p>No latest posts available.</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="favourites-section">
+        {% assign favourite_posts = site.posts | where_exp: "post", "post.tags contains 'favourite'" | limit: site.homepage_favourites_count %}
+        
+        {% if favourite_posts.size > 0 %}
+            <h2>Favourites</h2>
+            <div class="content-grid">
+                {% for post in favourite_posts %}
+                    {% include content-card-compact.html post=post show_excerpt=false %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                <h2>Favourites</h2>
+                <p>No favourite posts available.</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="topics-section">
+        {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+        
+        <h2>Topics</h2>
+        <ul>
+            {% for tag in all_tags %}
+                {% unless tag == 'latest' or tag == 'favourite' %}
+                    <li>
+                        <a href="/topics/{{ tag | slugify }}">{{ tag | capitalize }}</a>
+                    </li>
+                {% endunless %}
+            {% endfor %}
+        </ul>
+    </section>
+</div>

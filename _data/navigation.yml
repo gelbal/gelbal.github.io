@@ -1,0 +1,12 @@
+# ABOUTME: Navigation menu data for site header
+# ABOUTME: Defines main navigation items with titles and URLs
+- title: "About"
+  url: "/about"
+- title: "Essays"
+  url: "/essays"
+- title: "Visuals"
+  url: "/visuals"  
+- title: "Code"
+  url: "/code"
+- title: "Music"
+  url: "/music"

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<!-- ABOUTME: Category page layout template for filtering posts by category -->
+<!-- ABOUTME: Displays all posts matching the specified category using content cards -->
+
+<h1>{{ page.category | capitalize }}</h1>
+
+{% assign category_posts = site.posts | where: 'category', page.category %}
+
+{% if category_posts.size > 0 %}
+    <div class="content-grid">
+        {% for post in category_posts %}
+            {% include content-card.html post=post show_excerpt=false %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div>
+        <p>No posts found in the {{ page.category | capitalize }} category.</p>
+        <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
+    </div>
+{% endif %}
