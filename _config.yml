@@ -1,9 +1,9 @@
 # ABOUTME: Jekyll configuration file for personal website project
 # ABOUTME: Contains site metadata, build settings, and custom variables for homepage sections
 
-title: "Your Name"
+title: "Fırat Gelbal"
 description: "Personal website and portfolio"
-url: "https://yourdomain.com"
+url: "https://fgelbal.com"
 baseurl: ""
 
 # Homepage settings
@@ -23,16 +23,19 @@ collections:
 # GitHub Pages settings
 github: [metadata]
 
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
 # Exclude files from build
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - spec.md
-  - prompt_plan.md
-  - todo.md
-  - test-card.html
+  - .claude/
   - .specstory/
+  - vendor/
 
 # Defaults
 defaults:
