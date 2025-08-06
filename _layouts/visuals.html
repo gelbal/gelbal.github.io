@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<!-- ABOUTME: Visuals page layout with larger thumbnail grid display -->
+<!-- ABOUTME: Shows visual projects with bigger images and titles below -->
+
+<h1>{{ page.title }}</h1>
+
+<p>Hello there! I'm Fırat Gelbal. This site gathers my works and writings. My interests include data analysis, visualization, storytelling, and exploring the world through a perpetual state of wonder.</p>
+
+{% assign category_posts = site.posts | where: 'category', page.category %}
+
+{% if category_posts.size > 0 %}
+    <div class="visuals-grid">
+        {% for post in category_posts %}
+            <article class="visual-item">
+                <a href="{{ post.url | relative_url }}">
+                    {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail | relative_url }}" 
+                             alt="{{ post.title }}">
+                    {% endif %}
+                    <h3>{{ post.title }}</h3>
+                </a>
+            </article>
+        {% endfor %}
+    </div>
+{% else %}
+    <div>
+        <p>No visual projects found.</p>
+        <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
+    </div>
+{% endif %}

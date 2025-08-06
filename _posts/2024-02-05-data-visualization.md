@@ -2,7 +2,7 @@
 title: "Data Visualization"
 thumbnail: "/assets/images/data-viz-thumb.jpg"
 category: "visual"
-tags: ["latest", "data", "visualization", "web-development"]
+tags: ["data", "visualization", "web-development"]
 date: 2024-02-05
 excerpt: "Exploring the power of client-side data visualization using vanilla JavaScript and JSON data sources."
 ---

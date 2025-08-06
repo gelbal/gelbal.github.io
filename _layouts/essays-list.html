@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<!-- ABOUTME: Essays page layout with linear list format -->
+<!-- ABOUTME: Shows essays in a vertical list format instead of grid -->
+
+<h1>{{ page.title }}</h1>
+
+{% assign category_posts = site.posts | where: 'category', page.category %}
+
+{% if category_posts.size > 0 %}
+    <div class="essays-list">
+        {% for post in category_posts %}
+            <article class="essay-item">
+                <a href="{{ post.url | relative_url }}">
+                    <div class="essay-content">
+                        <h3>{{ post.title }}</h3>
+                        {% if post.excerpt %}
+                            <p class="essay-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                        {% endif %}
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="essay-date">
+                            {{ post.date | date: "%B %-d, %Y" }}
+                        </time>
+                    </div>
+                    {% if post.thumbnail %}
+                        <div class="essay-thumbnail">
+                            <img src="{{ post.thumbnail | relative_url }}" 
+                                 alt="{{ post.title }}">
+                        </div>
+                    {% endif %}
+                </a>
+            </article>
+        {% endfor %}
+    </div>
+    
+    <section class="topics-section">
+        {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+        
+        <h2>Topics</h2>
+        <ul>
+            {% for tag in all_tags %}
+                {% unless tag == 'latest' or tag == 'favourite' %}
+                    <li>
+                        <a href="/topics/{{ tag | slugify }}">{{ tag | capitalize }}</a>
+                    </li>
+                {% endunless %}
+            {% endfor %}
+        </ul>
+    </section>
+{% else %}
+    <div>
+        <p>No essays found.</p>
+        <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
+    </div>
+{% endif %}
