@@ -57,4 +57,22 @@ layout: default
             {% endfor %}
         </ul>
     </section>
+
+    <section class="music-section">
+        {% assign music_posts = site.posts | where: 'category', 'music' | limit: 1 %}
+        
+        {% if music_posts.size > 0 %}
+            <h2><a href="/music">Music</a></h2>
+            <div class="content-grid">
+                {% for post in music_posts %}
+                    {% include content-card-compact.html post=post show_excerpt=false %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                <h2><a href="/music">Music</a></h2>
+                <p>No music posts available.</p>
+            </div>
+        {% endif %}
+    </section>
 </div>
