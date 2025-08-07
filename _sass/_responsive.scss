@@ -1,26 +1,34 @@
 // ABOUTME: Responsive styles and media queries for mobile-first design
 // ABOUTME: Implements CSS Grid system with 1/2/3 column breakpoints
 
-// Content grid system
+// Content grid system - conservative breakpoints
 .content-grid {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr;
   
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-// Force single column on small screens for homepage
-@media (max-width: 599px) {
-  .home-sections .content-grid {
+// Force single column on small screens everywhere
+@media (max-width: 767px) {
+  .content-grid,
+  .home-sections .content-grid,
+  .visuals-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem;
+  }
+  
+  .content-card-compact {
+    img {
+      height: 150px;
+    }
   }
 }
 
@@ -38,33 +46,49 @@
     padding: 0 0.75rem;
   }
   
-  // Compact horizontal navigation on mobile
-  header nav {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  // Stack header items on very small screens
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
     
-    a {
-      margin: 0;
-      font-size: 0.9rem;
+    nav {
+      gap: 0.75rem;
+      
+      a {
+        font-size: 0.9rem;
+      }
     }
   }
 }
 
 @media (min-width: 768px) {
-  // Horizontal navigation on tablet and up
-  header nav {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-    
-    a {
-      margin: 0;
+  // Keep horizontal layout on tablet and up
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Tablet styles
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .home-sections {
+    section {
+      margin: 2.5rem 0;
     }
   }
 }
 
+// Desktop styles
 @media (min-width: 1024px) {
   body {
     font-size: 17px;
@@ -108,10 +132,19 @@
 
 // Large desktop screens (27" Mac and similar)
 @media (min-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+  
+  .container {
+    padding: 0 3rem;
+    max-width: 1400px;
+  }
+  
   .home-sections {
     .content-grid {
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
     
     section {
@@ -120,20 +153,34 @@
     
     .content-card-compact {
       img {
-        height: 100px;
+        height: 120px;
       }
       
       .card-content {
-        padding: 0.5rem;
+        padding: 0.75rem;
         
         h3 {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
         
         p {
-          font-size: 0.75rem;
+          font-size: 0.85rem;
         }
       }
+    }
+  }
+}
+
+// Ultra-wide screens (32" and larger)
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 4rem;
+  }
+  
+  .home-sections {
+    section {
+      margin: 5rem 0;
     }
   }
 }

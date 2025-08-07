@@ -1,6 +1,23 @@
 // ABOUTME: Layout styles for site structure, containers, and components
 // ABOUTME: Includes header, footer, content cards, and navigation styling
 
+// Skip link for accessibility
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 9999;
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
 // Container
 .container {
   max-width: 1200px;
@@ -13,27 +30,56 @@ header {
   padding: 2rem 0;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   
-  h1 a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.5rem;
+  h1 {
+    margin: 0;
     
-    &:hover {
+    a {
+      color: var(--text-color);
       text-decoration: none;
-      color: var(--accent-color);
+      font-size: 1.5rem;
+      
+      &:hover {
+        text-decoration: none;
+        color: var(--accent-color);
+      }
     }
   }
   
   nav {
-    margin-top: 1rem;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
     
     a {
-      margin-right: 1.5rem;
       color: var(--text-light);
+      font-size: 0.95rem;
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
       
-      &:hover {
+      &:hover,
+      &:focus {
         color: var(--accent-color);
+        background-color: var(--hover-background);
+        outline: none;
+      }
+      
+      &:focus {
+        box-shadow: 0 0 0 2px var(--accent-color);
+      }
+      
+      &[aria-current="page"] {
+        color: var(--accent-color);
+        font-weight: 600;
       }
     }
   }
@@ -64,7 +110,19 @@ section {
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   
-  &:hover {
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    
+    &:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+  }
+  
+  &:hover,
+  &:focus-within {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
@@ -181,6 +239,31 @@ section {
     p {
       margin: 0.5rem 0;
     }
+    
+    &.left-align {
+      text-align: left;
+      margin-left: 0;
+      padding-left: 1.5rem;
+      border-left: 4px solid var(--accent-color);
+      font-size: 1.2em;
+    }
+  }
+  
+  // Special spacing classes that can be applied via markdown
+  .large-space {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+  }
+  
+  .extra-large-space {
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+  }
+  
+  // Paragraph with extra spacing
+  .spaced-paragraph {
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
   }
   
   h2 {

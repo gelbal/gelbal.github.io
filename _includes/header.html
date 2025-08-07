@@ -1,10 +1,10 @@
 <!-- ABOUTME: Site header include with title and navigation placeholder -->
 <!-- ABOUTME: Contains main site branding and navigation menu with responsive layout -->
-<header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <nav>
+<header role="banner">
+    <h1><a href="{{ '/' | relative_url }}" aria-label="{{ site.title }} - Home">{{ site.title }}</a></h1>
+    <nav role="navigation" aria-label="Main navigation">
         {% for item in site.data.navigation %}
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
         {% endfor %}
     </nav>
 </header>

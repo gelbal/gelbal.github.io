@@ -2,7 +2,7 @@
 title: "WordPress.com Blog Metadata Organizer"
 thumbnail: "/assets/images/2024-12-01-data-blog-taxonomy/taxonomy_org_diagram.png"
 category: "code"
-tags: ["Favourite", "Python", "AI agents", "Natural Language Processing"]
+tags: ["favourite", "Python", "AI agents", "Natural Language Processing"]
 date: 2024-12-01
 excerpt: "A technical deep-dive into building scalable web applications with modern JavaScript frameworks and best practices."
 ---
