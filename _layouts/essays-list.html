@@ -41,7 +41,7 @@ layout: default
             {% for tag in all_tags %}
                 {% unless tag == 'latest' or tag == 'favourite' %}
                     <li>
-                        <a href="/topics/{{ tag | slugify }}">{{ tag | capitalize }}</a>
+                        <a href="/topics/{{ tag | slugify }}">{{ tag }}</a>
                     </li>
                 {% endunless %}
             {% endfor %}

@@ -2,7 +2,7 @@
 title: "Music Review"
 thumbnail: "/assets/images/music-review-thumb.jpg"
 category: "music"
-tags: ["ambient", "electronic", "listening"]
+tags: ["Ambient", "Electronic", "Listening"]
 date: 2024-02-01
 excerpt: "A review of recent ambient electronic releases and their influence on focused work and creative processes."
 ---

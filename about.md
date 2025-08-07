@@ -12,6 +12,6 @@ Currently, I work at [Automattic](https://automattic.com/) as Analytics Engineer
 
 
 Feel free to [email me](mailto:firat.gelbal@gmail.com) to say 'hi' or ask questions. My open source projects are listed on [GitHub](http://github.com/gelbal/). Find out more about me from the below links.
-    - [Photos](https://www.eyeem.com/u/pocamadre) from my trips
-    - [LinkedIn profile](https://www.linkedin.com/in/fgelbal/)
-    - Automattic's [data.blog](https://data.blog/) where I work as editor
+- [Photos](https://www.eyeem.com/u/pocamadre) from my trips
+- [LinkedIn profile](https://www.linkedin.com/in/fgelbal/)
+- Automattic's [data.blog](https://data.blog/) where I work as editor

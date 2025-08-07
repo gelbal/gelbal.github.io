@@ -4,7 +4,7 @@ layout: default
 <!-- ABOUTME: Tag page layout template for displaying posts with specific tag -->
 <!-- ABOUTME: Shows all posts that contain the specified tag -->
 
-<h1>{{ page.tag | capitalize }}</h1>
+<h1>{{ page.tag }}</h1>
 
 {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
 

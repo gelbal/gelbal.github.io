@@ -2,7 +2,7 @@
 title: "Modern versions of Turkish Proverbs"
 thumbnail: "/assets/images/2014-04-24-modern-versions-of-turkish-proverbs/tuz-golu.png"
 category: "visual"
-tags: ["data visualization", "illustration", "turkish"]
+tags: ["Data Visualization", "Illustration", "Turkish"]
 date: 2014-04-24
 excerpt: "This poster's goal is to increase awareness on drying of lakes in Anatolia. The illustration is Lake Tuz: Turkey's 2nd largest lake. More than 85% of it has dried up over the past century."
 ---

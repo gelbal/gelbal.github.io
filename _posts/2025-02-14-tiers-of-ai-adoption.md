@@ -2,7 +2,7 @@
 title: "Tiers of AI Adoption: A Personal Journey"
 thumbnail: "/assets/images/2025-02-14-tiers-of-ai-adoption/tiers.png"
 category: "essay"
-tags: ["favourite", "AI agents", "AI adoption"]
+tags: ["Favourite", "AI agents", "AI adoption"]
 date: 2025-02-14
 excerpt: "I illustrate the progressive integration of AI into my workflows through four tiers. From exploring AI tools to optimizing coding tasks and envisioning proactive AI agents"
 ---

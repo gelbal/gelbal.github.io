@@ -2,7 +2,7 @@
 title: "Routing in Stochastic Networks"
 thumbnail: "/assets/images/2014-01-21-routing-in-stochastic-networks/tez-kapak.png"
 category: "visual"
-tags: ["design", "book cover", "illustration"]
+tags: ["Design", "Book Cover", "Illustration"]
 date: 2014-01-21
 excerpt: "Inspired by Alexander Calder's Mobility series of sculptures. I designed this cover for Derya Sever's PhD thesis."
 ---
