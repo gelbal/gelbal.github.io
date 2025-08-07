@@ -25,7 +25,7 @@ header {
     a {
       color: var(--text-color);
       text-decoration: none;
-      font-size: 1.75rem;
+      font-size: 2.5rem;
       
       &:hover {
         text-decoration: none;
@@ -42,7 +42,7 @@ header {
     
     a {
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       white-space: nowrap;
       text-decoration: none;
       padding: 0.4rem 0.6rem;
@@ -67,10 +67,10 @@ header {
     }
     
     .search-button {
-      background: var(--background-color);
+      background: var(--background);
       border: 1px solid var(--border-color);
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       white-space: nowrap;
       text-decoration: none;
       padding: 0.4rem 0.6rem;
@@ -105,7 +105,7 @@ header {
     border: 2px solid var(--border-color);
     border-radius: 50px;
     font-size: 1rem;
-    background: var(--background-color);
+    background: var(--background);
     color: var(--text-color);
     transition: all 0.2s ease;
     cursor: pointer;
@@ -213,7 +213,7 @@ section {
   }
 }
 
-// Visual-style compact cards for homepage
+// Visual-style compact cards for homepage - exact match with Visuals page
 .visual-card-compact {
   text-align: left;
   
@@ -221,16 +221,11 @@ section {
     text-decoration: none;
     color: inherit;
     display: block;
-    
-    &:focus {
-      outline: 2px solid var(--accent-color);
-      outline-offset: 2px;
-    }
   }
   
   img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -244,7 +239,7 @@ section {
   .card-content {
     h3 {
       margin: 0 0 0.5rem 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 600;
       text-decoration: underline;
       text-decoration-thickness: 2px;
@@ -252,7 +247,7 @@ section {
     }
     
     .card-excerpt {
-      margin: 0;
+      margin: 0.5rem 0 0 0;
       color: var(--text-light);
       font-size: 0.9rem;
       line-height: 1.4;
@@ -283,8 +278,12 @@ section {
     }
   }
   
+  // Make homepage content grid like Visuals grid
   .content-grid {
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin: 3rem 0;
   }
 }
 
@@ -584,7 +583,7 @@ section {
     position: relative;
     width: 90%;
     max-width: 700px;
-    background: var(--background-color);
+    background: var(--background);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);

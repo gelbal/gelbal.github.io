@@ -41,12 +41,14 @@
             {{ content }}
         </main>
         
+        {% unless page.url == '/about/' %}
         <div class="bottom-search">
             <input type="text" id="bottom-search-input" placeholder="Search..." class="bottom-search-input" />
         </div>
+        {% endunless %}
         
         <footer>
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+            <p>{{ site.title }}</p>
         </footer>
     </div>
     
