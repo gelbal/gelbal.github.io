@@ -1,6 +1,6 @@
 ---
 title: "Tiers of AI Adoption: A Personal Journey"
-thumbnail: "/assets/images/2025-02-14-tiers-of-ai-adoption/tiers.png"
+thumbnail: "/assets/images/2025-02-14-tiers-of-ai-adoption/fge-vangogh.png"
 category: "essay"
 tags: ["favourite", "AI agents", "AI adoption"]
 date: 2025-02-14
