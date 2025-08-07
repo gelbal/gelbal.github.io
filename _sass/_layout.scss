@@ -25,7 +25,6 @@ header {
     a {
       color: var(--text-color);
       text-decoration: none;
-      font-size: 2.5rem;
       
       &:hover {
         text-decoration: none;
@@ -258,6 +257,9 @@ section {
 // Homepage specific styles
 .home-sections {
   margin-top: 1rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   
   section {
     margin: 2rem 0;

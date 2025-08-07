@@ -9,9 +9,17 @@ layout: default
 {% assign category_posts = site.posts | where: 'category', page.category %}
 
 {% if category_posts.size > 0 %}
-    <div class="content-grid">
+    <div class="visuals-grid">
         {% for post in category_posts %}
-            {% include content-card.html post=post show_excerpt=false %}
+            <article class="visual-item">
+                <a href="{{ post.url | relative_url }}">
+                    {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail | relative_url }}" 
+                             alt="{{ post.title }}">
+                    {% endif %}
+                    <h3>{{ post.title }}</h3>
+                </a>
+            </article>
         {% endfor %}
     </div>
 {% else %}
