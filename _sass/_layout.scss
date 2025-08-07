@@ -25,7 +25,7 @@ header {
     a {
       color: var(--text-color);
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       
       &:hover {
         text-decoration: none;
@@ -42,7 +42,7 @@ header {
     
     a {
       color: var(--text-light);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       white-space: nowrap;
       text-decoration: none;
       padding: 0.4rem 0.6rem;
@@ -70,7 +70,7 @@ header {
       background: var(--background-color);
       border: 1px solid var(--border-color);
       color: var(--text-light);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       white-space: nowrap;
       text-decoration: none;
       padding: 0.4rem 0.6rem;
@@ -93,13 +93,44 @@ header {
   }
 }
 
+// Bottom search bar
+.bottom-search {
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+  
+  .bottom-search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 1rem;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(0, 150, 255, 0.1);
+    }
+    
+    &::placeholder {
+      color: var(--text-light);
+    }
+  }
+}
+
 // Footer
 footer {
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding: 2rem 0;
   border-top: 1px solid var(--border-color);
   color: var(--text-light);
   font-size: 0.9rem;
+  text-align: center;
 }
 
 // Sections
@@ -182,14 +213,50 @@ section {
   }
 }
 
-// Fix single column sections to have better image sizing
-.latest-section .content-grid,
-.favourites-section .content-grid,
-.music-section .content-grid {
-  .content-card-compact img {
+// Visual-style compact cards for homepage
+.visual-card-compact {
+  text-align: left;
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    
+    &:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+  }
+  
+  img {
+    width: 100%;
     height: 200px;
-    object-fit: contain;
-    background: var(--hover-background);
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  
+  .card-content {
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+    
+    .card-excerpt {
+      margin: 0;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
   }
 }
 
@@ -508,7 +575,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
@@ -518,8 +585,9 @@ section {
     width: 90%;
     max-width: 700px;
     background: var(--background-color);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     max-height: 80vh;
     overflow: hidden;
     

@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: ambient
+tag: Ambient
 title: Ambient
 ---

@@ -11,7 +11,7 @@ layout: default
 {% if category_posts.size > 0 %}
     <div class="content-grid">
         {% for post in category_posts %}
-            {% include content-card.html post=post show_excerpt=false %}
+            {% include visual-card-compact.html post=post show_excerpt=true %}
         {% endfor %}
     </div>
 {% else %}

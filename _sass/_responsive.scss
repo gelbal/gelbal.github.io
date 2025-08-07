@@ -86,7 +86,16 @@
   h3 { font-size: 1.15rem; }
   
   .container {
-    padding: 0 0.75rem;
+    padding: 0 1.25rem;
+  }
+  
+  // Add more vertical spacing on small screens
+  header {
+    padding: 2.5rem 0;
+  }
+  
+  .home-sections section {
+    margin: 2.5rem 0;
   }
   
   // Only stack header items on extremely narrow screens if absolutely needed

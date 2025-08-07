@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: electronic
+tag: Electronic
 title: Electronic
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: writing
+tag: Writing
 title: Writing
 ---

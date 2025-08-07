@@ -6,6 +6,7 @@
   const searchToggle = document.getElementById('search-toggle');
   const searchClose = document.getElementById('search-close');
   const searchInput = document.getElementById('search-input');
+  const bottomSearchInput = document.getElementById('bottom-search-input');
   const searchResults = document.getElementById('search-results');
   const backdrop = document.querySelector('.search-modal-backdrop');
   
@@ -103,6 +104,11 @@
     searchInput.addEventListener('input', (e) => {
       search(e.target.value);
     });
+  }
+  
+  if (bottomSearchInput) {
+    bottomSearchInput.addEventListener('click', openModal);
+    bottomSearchInput.addEventListener('focus', openModal);
   }
   
   // Close modal on Escape key

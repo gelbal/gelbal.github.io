@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: design
+tag: Design
 title: Design
 ---

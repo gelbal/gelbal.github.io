@@ -14,7 +14,7 @@ layout: default
             <h2>Latest</h2>
             <div class="content-grid">
                 {% for post in latest_posts %}
-                    {% include content-card-compact.html post=post show_excerpt=true %}
+                    {% include visual-card-compact.html post=post show_excerpt=true %}
                 {% endfor %}
             </div>
         {% else %}
@@ -32,7 +32,7 @@ layout: default
             <h2>Favourites</h2>
             <div class="content-grid">
                 {% for post in favourite_posts %}
-                    {% include content-card-compact.html post=post show_excerpt=false %}
+                    {% include visual-card-compact.html post=post show_excerpt=true %}
                 {% endfor %}
             </div>
         {% else %}
@@ -65,7 +65,7 @@ layout: default
             <h2><a href="/music">Music</a></h2>
             <div class="content-grid">
                 {% for post in music_posts %}
-                    {% include content-card-compact.html post=post show_excerpt=false %}
+                    {% include visual-card-compact.html post=post show_excerpt=true %}
                 {% endfor %}
             </div>
         {% else %}
