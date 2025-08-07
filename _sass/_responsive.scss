@@ -43,12 +43,34 @@
 // Small screens - try to keep navigation horizontal
 @media (max-width: 600px) {
   header {
+    gap: 0.5rem;
+    
     nav {
-      gap: 0.5rem;
+      gap: 0.3rem;
       
-      a {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.5rem;
+      a, .search-button {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.4rem;
+      }
+    }
+  }
+}
+
+// Extra small screens - even more compact
+@media (max-width: 480px) {
+  header {
+    gap: 0.25rem;
+    
+    h1 a {
+      font-size: 1.3rem;
+    }
+    
+    nav {
+      gap: 0.25rem;
+      
+      a, .search-button {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.35rem;
       }
     }
   }
@@ -67,19 +89,19 @@
     padding: 0 0.75rem;
   }
   
-  // Only stack header items on very small screens if needed
-  @media (max-width: 480px) {
+  // Only stack header items on extremely narrow screens if absolutely needed
+  @media (max-width: 320px) {
     header {
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.75rem;
+      gap: 0.5rem;
       
       nav {
-        gap: 0.75rem;
+        gap: 0.5rem;
         
-        a {
-          font-size: 0.8rem;
-          padding: 0.4rem 0.6rem;
+        a, .search-button {
+          font-size: 0.7rem;
+          padding: 0.3rem 0.5rem;
         }
       }
     }
