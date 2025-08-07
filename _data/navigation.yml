@@ -10,3 +10,5 @@
   url: "/code"
 - title: "Music"
   url: "/music"
+- title: "Search"
+  url: "/search"

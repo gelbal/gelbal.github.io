@@ -16,6 +16,13 @@
   }
 }
 
+// Force single column for Latest and Favourites sections
+.latest-section .content-grid,
+.favourites-section .content-grid {
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem;
+}
+
 // Force single column on small screens everywhere
 @media (max-width: 767px) {
   .content-grid,
