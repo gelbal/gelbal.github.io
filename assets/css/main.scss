@@ -3,6 +3,6 @@
 // ABOUTME: Main SASS file that imports all stylesheet components
 // ABOUTME: Uses Jekyll front matter to enable SASS processing
 
-@use "base";
-@use "layout";
-@use "responsive";
+@import "base";
+@import "layout";
+@import "responsive";
