@@ -1,5 +1,5 @@
 ---
-title: "WordPress.com Blog Metadata Organizer"
+title: "balena Inkyshot"
 thumbnail: "/assets/images/2020-12-01-balena-inkyshot/inkyshot-header-photo.jpg"
 category: "code"
 tags: ["Python", "Internet of Things", "Raspberry Pi"]

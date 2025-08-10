@@ -5,30 +5,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title == "Home" %}{{ site.title }} — Storyteller{% elsif page.title %}{{ site.title }} — {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.title }}">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:title" content="{% if page.title == 'Home' %}{{ site.title }} — Storyteller{% elsif page.title %}{{ site.title }} — {{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     {% if page.thumbnail %}<meta property="og:image" content="{{ page.thumbnail | absolute_url }}">{% endif %}
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ page.url | absolute_url }}">
-    <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="twitter:title" content="{% if page.title == 'Home' %}{{ site.title }} — Storyteller{% elsif page.title %}{{ site.title }} — {{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     {% if page.thumbnail %}<meta property="twitter:image" content="{{ page.thumbnail | absolute_url }}">{% endif %}
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    
+
     <!-- Analytics -->
     <script data-goatcounter="https://fgelbal.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
@@ -36,22 +36,22 @@
 <body>
     <div class="container">
         {% include header.html %}
-        
+
         <main role="main">
             {{ content }}
         </main>
-        
+
         {% unless page.url == '/about/' %}
         <div class="bottom-search">
             <input type="text" id="bottom-search-input" placeholder="Search..." class="bottom-search-input" />
         </div>
         {% endunless %}
-        
+
         <footer>
             <p>{{ site.title }} &nbsp;|&nbsp; fgelbal.com</p>
         </footer>
     </div>
-    
+
     <!-- Search Modal -->
     <div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
         <div class="search-modal-backdrop"></div>
@@ -63,7 +63,7 @@
             <div id="search-results" class="search-results"></div>
         </div>
     </div>
-    
+
     <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
 </body>
 </html>

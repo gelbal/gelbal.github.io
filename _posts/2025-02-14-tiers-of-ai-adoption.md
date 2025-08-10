@@ -92,8 +92,7 @@ I'm more excited about building agents to help with my work than doing the work 
 ## Overcoming Conceptual Hurdles
 
 Throughout this journey, I have referred to these technologies as "AI," though terms like "language model," "LLM," or "super knowledge" could also apply. But why does terminology matter? I stick with "AI" as it's the most common and accessible term. One of the frictions hindering AI adoption is the conceptual hangups surrounding it. I prefer to focus on the practical aspects of AI and how it can enhance our workflows.
-
-    - Tier 1's hurdle: Believing AI isn't just for tech bros.
-    - Tier 2's hurdle: Trusting AI more than StackOverflow.
-    - Tier 3’s hurdle: Non-deterministic generative responses is a feature, not a bug.
-    - Tier 4’s hurdle: Agents aren't about automation. They're about focusing on solving the higher level problems.
+- Tier 1's hurdle: Believing AI isn't just for tech bros.
+- Tier 2's hurdle: Trusting AI more than StackOverflow.
+- Tier 3’s hurdle: Non-deterministic generative responses is a feature, not a bug.
+- Tier 4’s hurdle: Agents aren't about automation. They're about focusing on solving the higher level problems.

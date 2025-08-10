@@ -9,11 +9,26 @@ layout: default
 {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
 
 {% if tag_posts.size > 0 %}
-    <div class="content-grid">
+    <div class="content-grid tag-page-grid">
         {% for post in tag_posts %}
-            {% include visual-card-compact.html post=post show_excerpt=true %}
+            {% include content-card-compact.html post=post show_excerpt=true %}
         {% endfor %}
     </div>
+    
+    <section class="topics-section">
+        {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+        
+        <h2>Topics</h2>
+        <ul>
+            {% for tag in all_tags %}
+                {% unless tag == 'latest' or tag == 'favourite' %}
+                    <li>
+                        <a href="/topics/{{ tag | slugify }}">{{ tag }}</a>
+                    </li>
+                {% endunless %}
+            {% endfor %}
+        </ul>
+    </section>
 {% else %}
     <div>
         <p>No posts found with the tag "{{ page.tag }}".</p>

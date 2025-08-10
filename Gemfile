@@ -3,10 +3,10 @@
 
 source "https://rubygems.org"
 
-# For local development
-gem "jekyll", "~> 4.3"
+# GitHub Pages gem - includes Jekyll and supported plugins
+gem "github-pages", group: :jekyll_plugins
 
-# Jekyll plugins
+# Additional plugins for local development
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-sitemap"

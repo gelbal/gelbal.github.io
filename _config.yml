@@ -22,6 +22,7 @@ collections:
 
 # GitHub Pages settings
 github: [metadata]
+safe: true
 
 # Plugins
 plugins:

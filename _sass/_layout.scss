@@ -25,6 +25,8 @@ header {
     a {
       color: var(--text-color);
       text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
       
       &:hover {
         text-decoration: none;
@@ -47,6 +49,8 @@ header {
       padding: 0.4rem 0.6rem;
       border-radius: 4px;
       transition: all 0.2s ease;
+      text-transform: uppercase;
+      font-weight: 600;
       
       &:hover,
       &:focus {
@@ -76,6 +80,8 @@ header {
       border-radius: 4px;
       transition: all 0.2s ease;
       cursor: pointer;
+      text-transform: uppercase;
+      font-weight: 600;
       
       &:hover,
       &:focus {
@@ -138,6 +144,8 @@ section {
   
   h2 {
     margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -212,7 +220,7 @@ section {
   }
 }
 
-// Horizontal compact cards for homepage - two-column layout
+// Horizontal compact cards for homepage - content left, image right
 .horizontal-card-compact {
   margin-bottom: 1.5rem;
   
@@ -220,7 +228,7 @@ section {
     text-decoration: none;
     color: inherit;
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     align-items: flex-start;
     transition: transform 0.2s ease;
     
@@ -231,19 +239,6 @@ section {
     &:focus {
       outline: 2px solid var(--accent-color);
       outline-offset: 2px;
-    }
-  }
-  
-  .card-image {
-    flex-shrink: 0;
-    width: 120px;
-    
-    img {
-      width: 100%;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 6px;
-      display: block;
     }
   }
   
@@ -264,6 +259,19 @@ section {
       line-height: 1.4;
     }
   }
+  
+  .card-image {
+    flex-shrink: 0;
+    width: 140px;
+    
+    img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+  }
 }
 
 // Homepage specific styles
@@ -279,6 +287,8 @@ section {
     h2 {
       font-size: 1.25rem;
       margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
       
       a {
         color: var(--text-color);
@@ -329,6 +339,25 @@ section {
     
     &:hover {
       background: var(--border-color);
+    }
+  }
+}
+
+// Tag page specific styles
+.tag-page-grid {
+  .content-card-compact {
+    .card-content {
+      h3 {
+        color: var(--text-color) !important;
+        
+        &:hover {
+          color: var(--accent-color) !important;
+        }
+      }
+      
+      p {
+        color: var(--text-light) !important;
+      }
     }
   }
 }
@@ -502,12 +531,6 @@ section {
   
   .essay-item {
     margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    
-    &:last-child {
-      border-bottom: none;
-    }
     
     a {
       text-decoration: none;
