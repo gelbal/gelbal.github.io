@@ -1,5 +1,5 @@
 ---
 layout: tag
-tag: digital-identity
+tag: Digital Identity
 title: Digital Identity
 ---
