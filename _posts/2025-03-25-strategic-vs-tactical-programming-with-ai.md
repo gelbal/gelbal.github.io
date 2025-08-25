@@ -2,7 +2,7 @@
 title: "Strategic vs. Tactical Programming with AI"
 thumbnail: "/assets/images/2025-03-25-strategic-vs-tactical-programming-with-ai/olympics2024-yusuf-dikec.png"
 category: "essay"
-tags: ["latest", "AI agents", "AI adoption"]
+tags: ["AI agents", "AI adoption"]
 date: 2025-03-25
 excerpt: "In this one I discuss John Ousterhout's philosophy on software design, emphasizing the balance between tactical and strategic programming. I reflect on a project utilizing AI for device classification, highlighting AI's strengths in rapid prototyping while addressing challenges like design misalignment and code readability."
 ---
