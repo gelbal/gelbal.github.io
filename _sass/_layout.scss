@@ -401,23 +401,16 @@ section {
   blockquote {
     margin: 2.5rem 0;
     padding: 0;
+    padding-left: 1.5rem;
     border: none;
-    text-align: center;
-    font-size: 1.4em;
-    font-style: italic;
+    border-left: 4px solid var(--accent-color);
+    text-align: left;
+    font-size: 1.2em;
     line-height: 1.5;
     color: var(--text-color);
-    
+
     p {
       margin: 0.5rem 0;
-    }
-    
-    &.left-align {
-      text-align: left;
-      margin-left: 0;
-      padding-left: 1.5rem;
-      border-left: 4px solid var(--accent-color);
-      font-size: 1.2em;
     }
   }
   
