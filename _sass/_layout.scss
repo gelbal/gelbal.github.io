@@ -456,6 +456,23 @@ section {
   }
 }
 
+// Tables in post content
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  th {
+    font-weight: 600;
+  }
+}
+
 // Tags in posts
 .tag {
   background: var(--hover-background);
