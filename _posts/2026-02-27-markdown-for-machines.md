@@ -2,7 +2,7 @@
 title: "Markdown for Machines"
 thumbnail: "/assets/images/2026-02-27-markdown-for-machines/sketch-to-vector-doorway.png"
 category: "essay"
-tags: ["latest", "AI agents", "Personal Websites"]
+tags: ["latest", "AI adoption", "AI agents"]
 date: 2026-02-27
 excerpt: "For years, websites served humans and search engines. Now AI agents are the third audience. I read Dries Buytaert's post about serving Markdown for them, and asked Claude Code to bring the idea to my static site."
 ---
