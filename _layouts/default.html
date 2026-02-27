@@ -29,6 +29,9 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
+    <!-- Markdown alternate for AI agents -->
+    {% if page.layout == 'post' %}{% assign md_slug = page.url | remove_first: "/" | split: "/" | first %}<link rel="alternate" type="text/markdown" href="{{ '/' | append: md_slug | append: '.md' | absolute_url }}" title="Markdown version">{% endif %}
+
     <!-- Analytics -->
     <script data-goatcounter="https://fgelbal.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>

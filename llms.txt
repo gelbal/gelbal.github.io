@@ -1,0 +1,18 @@
+---
+layout: null
+sitemap: false
+---
+# {{ site.title }}
+
+> Personal website of Firat Gelbal — essays on data, measurement, AI, and visualization.
+
+All posts on this site are available in Markdown format by appending `.md` to the post URL.
+
+## Posts
+{% for post in site.posts %}{% assign md_slug = post.url | remove_first: "/" | split: "/" | first %}
+- [{{ post.title }}]({{ site.url }}/{{ md_slug }}.md): {{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}{% endfor %}
+
+## Links
+
+- [About]({{ site.url }}/about): About the author
+- [RSS Feed]({{ site.url }}/feed.xml): Full-text Atom feed
