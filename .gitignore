@@ -53,5 +53,6 @@ vendor
 # Project planning and development files
 .claude/
 .specstory/
+.playwright-mcp/
 .cursorindexingignore
 test-card.html

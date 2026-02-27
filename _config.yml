@@ -37,6 +37,8 @@ exclude:
   - .claude/
   - .specstory/
   - vendor/
+  - _scripts/
+  - Makefile
 
 # Defaults
 defaults:
