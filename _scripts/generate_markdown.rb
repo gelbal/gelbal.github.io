@@ -4,6 +4,7 @@
 # ABOUTME: Post-build script that generates .md versions of all posts for AI agents.
 # ABOUTME: Run after `jekyll build` to create /:title.md files in the _site directory.
 
+require "date"
 require "yaml"
 require "fileutils"
 
