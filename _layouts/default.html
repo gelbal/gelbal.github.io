@@ -29,6 +29,9 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
+    <!-- RSS Feed -->
+    {% feed_meta %}
+
     <!-- Markdown alternate for AI agents -->
     {% if page.layout == 'post' %}{% assign md_slug = page.url | remove_first: "/" | split: "/" | first %}<link rel="alternate" type="text/markdown" href="{{ '/' | append: md_slug | append: '.md' | absolute_url }}" title="Markdown version">{% endif %}
 
@@ -51,7 +54,7 @@
         {% endunless %}
 
         <footer>
-            <p>{{ site.title }} &nbsp;|&nbsp; fgelbal.com</p>
+            <p>{{ site.title }} &nbsp;|&nbsp; fgelbal.com &nbsp;|&nbsp; <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
         </footer>
     </div>
 

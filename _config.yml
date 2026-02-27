@@ -24,10 +24,19 @@ collections:
 github: [metadata]
 safe: true
 
+# Author metadata
+author:
+  name: "Firat Gelbal"
+  url: "https://fgelbal.com"
+
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Feed settings
+feed:
+  excerpt_only: true
 
 # Exclude files from build
 exclude:
