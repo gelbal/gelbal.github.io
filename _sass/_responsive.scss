@@ -6,13 +6,21 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr;
-  
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Inside the narrow reading column, cap content-grid at 2 columns —
+// 3 would overflow or cramp at 720px.
+.page-narrow .content-grid {
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -247,21 +255,6 @@
     
     section {
       margin: 3rem 0;
-    }
-  }
-  
-  // Better image sizing on desktop
-  .post-content {
-    img[style*="width:50%"] {
-      width: 40% !important;
-    }
-    
-    img[style*="width:60%"] {
-      width: 50% !important;
-    }
-    
-    img[style*="width:70%"] {
-      width: 60% !important;
     }
   }
 }

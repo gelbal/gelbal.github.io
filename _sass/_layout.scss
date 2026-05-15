@@ -362,38 +362,18 @@ section {
   }
 }
 
-// Post content with image-width matching
+// Narrow reading column shared by post pages and category index pages.
+.post,
+.page-narrow {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+// Post content
 .post-content {
   margin: 2rem 0;
   line-height: 1.7;
-  
-  // For posts in visual/code categories, constrain content width to image
-  &.constrained-width {
-    display: block;
-    margin: 0 auto;
-    max-width: 90vw;
-    
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 2.5rem auto;
-    }
-    
-    // First image sets the content width
-    img:first-of-type {
-      width: auto;
-      max-width: min(70vw, 800px);
-    }
-    
-    // All content containers match the effective image width
-    p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
-      max-width: min(70vw, 800px);
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  
+
   p {
     margin-bottom: 1.8rem;
   }
@@ -526,12 +506,6 @@ section {
   .visuals-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .visuals-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
