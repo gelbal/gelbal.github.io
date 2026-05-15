@@ -4,27 +4,29 @@ layout: default
 <!-- ABOUTME: Category page layout template for filtering posts by category -->
 <!-- ABOUTME: Displays all posts matching the specified category using content cards -->
 
-<h1>{{ page.category | capitalize }}</h1>
+<div class="page-narrow">
+    <h1>{{ page.category | capitalize }}</h1>
 
-{% assign category_posts = site.posts | where: 'category', page.category %}
+    {% assign category_posts = site.posts | where: 'category', page.category %}
 
-{% if category_posts.size > 0 %}
-    <div class="visuals-grid">
-        {% for post in category_posts %}
-            <article class="visual-item">
-                <a href="{{ post.url | relative_url }}">
-                    {% if post.thumbnail %}
-                        <img src="{{ post.thumbnail | relative_url }}" 
-                             alt="{{ post.title }}">
-                    {% endif %}
-                    <h3>{{ post.title }}</h3>
-                </a>
-            </article>
-        {% endfor %}
-    </div>
-{% else %}
-    <div>
-        <p>No posts found in the {{ page.category | capitalize }} category.</p>
-        <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
-    </div>
-{% endif %}
+    {% if category_posts.size > 0 %}
+        <div class="visuals-grid">
+            {% for post in category_posts %}
+                <article class="visual-item">
+                    <a href="{{ post.url | relative_url }}">
+                        {% if post.thumbnail %}
+                            <img src="{{ post.thumbnail | relative_url }}"
+                                 alt="{{ post.title }}">
+                        {% endif %}
+                        <h3>{{ post.title }}</h3>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div>
+            <p>No posts found in the {{ page.category | capitalize }} category.</p>
+            <p><a href="{{ '/' | relative_url }}">← Back to homepage</a></p>
+        </div>
+    {% endif %}
+</div>
