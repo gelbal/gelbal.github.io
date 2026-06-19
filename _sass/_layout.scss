@@ -11,8 +11,7 @@
 // Header
 header {
   padding: 2rem 0;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,7 +24,7 @@ header {
     a {
       color: var(--text-color);
       text-decoration: none;
-      text-transform: uppercase;
+      text-transform: lowercase;
       font-weight: 700;
       
       &:hover {
@@ -147,6 +146,14 @@ section {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
   }
+}
+
+.home-sections section h2 {
+  text-transform: lowercase;
+}
+
+.home-sections section:first-child {
+  margin-top: 2rem;
 }
 
 // Content cards
