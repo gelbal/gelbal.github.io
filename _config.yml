@@ -43,7 +43,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - AGENTS.md
   - .claude/
+  - .playwright-mcp/
   - .specstory/
   - vendor/
   - _scripts/

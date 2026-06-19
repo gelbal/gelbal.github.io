@@ -1,0 +1,31 @@
+<!-- ABOUTME: Embeds the Dottıng model timeline chart in a Jekyll post. -->
+<!-- ABOUTME: Provides a static fallback image and loads the client-side SVG renderer. -->
+
+<figure
+    class="dotting-shift-figure"
+    data-dotting-shift-chart
+    data-source="{{ '/assets/data/dotting-shift-chart.json' | relative_url }}"
+>
+    <div class="dotting-shift-card">
+        <h3>The late-2025 jump: 53% to 91%</h3>
+        <p>
+            The practical shift runs from roughly 53% exact text at FLUX.2 [dev] to about
+            91% around GPT Image 1.5. This is where the dotless ı stops looking like a
+            rare lucky render.
+        </p>
+        <div class="dotting-shift-chart" data-dotting-shift-chart-canvas>
+            <img
+                class="dotting-shift-fallback"
+                src="{{ '/assets/images/2026-06-19-do-not-dot-the-pixel-i/late-2025-glyph-shift-chart.png' | relative_url }}"
+                alt="A Dottıng chart showing human-correct model results rising from 53% near FLUX.2 dev to about 91% around GPT Image 1.5."
+                loading="lazy"
+            />
+        </div>
+    </div>
+    <figcaption>
+        Human labels from the Dottıng benchmark, grouped by model launch date. Hover or
+        focus a point for the exact model details.
+    </figcaption>
+</figure>
+
+<script src="{{ '/assets/js/dotting-shift-chart.js' | relative_url }}" defer></script>

@@ -1,0 +1,213 @@
+// ABOUTME: Styles the interactive Dottıng timeline chart embedded in blog posts.
+// ABOUTME: Keeps the visualization readable in the narrow essay layout.
+
+.dotting-shift-figure {
+  width: min(100vw - 2rem, 64rem);
+  margin: 3rem 0 3.25rem 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+
+  figcaption {
+    max-width: 44rem;
+    margin: 0.75rem auto 0;
+    color: var(--text-light);
+    font-size: 0.86rem;
+    line-height: 1.45;
+    text-align: center;
+  }
+}
+
+.dotting-shift-card {
+  padding: clamp(1rem, 2.2vw, 1.45rem);
+  border: 1px solid #c8dce0;
+  border-radius: 6px;
+  background: #fffffb;
+  box-shadow: 0 10px 30px rgba(32, 54, 62, 0.06);
+
+  h3 {
+    margin: 0 0 0.45rem;
+    color: #17212b;
+    font-size: clamp(1.2rem, 2.3vw, 1.85rem);
+    font-weight: 760;
+    line-height: 1.12;
+  }
+
+  p {
+    max-width: 52rem;
+    margin: 0 0 1rem;
+    color: #465d65;
+    font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+    line-height: 1.45;
+  }
+}
+
+.dotting-shift-chart {
+  position: relative;
+  min-height: 23rem;
+}
+
+.dotting-shift-scroll {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+}
+
+.dotting-shift-chart svg {
+  display: block;
+  min-width: 46rem;
+  width: 100%;
+  overflow: visible;
+}
+
+.dotting-shift-fallback {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
+.dotting-shift-figure.is-rendered .dotting-shift-fallback {
+  display: none;
+}
+
+.dotting-shift-grid {
+  stroke: #d9e8e8;
+  stroke-width: 1;
+}
+
+.dotting-shift-tick {
+  fill: #465d65;
+  font-size: 12px;
+}
+
+.dotting-shift-axis-label {
+  fill: #17212b;
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.dotting-shift-band {
+  fill: rgba(181, 137, 10, 0.09);
+}
+
+.dotting-shift-frontier-line {
+  fill: none;
+  stroke: #70858c;
+  stroke-width: 1.2;
+  stroke-dasharray: 6 7;
+  opacity: 0.62;
+}
+
+.dotting-shift-trust-line {
+  stroke: #df5a5f;
+  stroke-width: 1.25;
+  stroke-dasharray: 9 8;
+  opacity: 0.72;
+}
+
+.dotting-shift-bracket {
+  fill: none;
+  stroke: #a4510a;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.dotting-shift-annotation line {
+  stroke: #17212b;
+  stroke-width: 1.1;
+  opacity: 0.5;
+}
+
+.dotting-shift-annotation text {
+  fill: #17212b;
+  font-size: 11.5px;
+  font-weight: 760;
+}
+
+.dotting-shift-point circle {
+  pointer-events: all;
+  transition: opacity 140ms ease-out, stroke-width 140ms ease-out;
+}
+
+.dotting-shift-point:hover circle,
+.dotting-shift-point:focus-visible circle {
+  opacity: 1;
+  stroke: #17212b;
+  stroke-width: 1.8;
+  outline: none;
+}
+
+.dotting-shift-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+  margin-top: 0.6rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid #d9e8e8;
+  color: #465d65;
+  font-size: 0.78rem;
+}
+
+.dotting-shift-legend span {
+  display: inline-flex;
+  gap: 0.38rem;
+  align-items: center;
+}
+
+.dotting-shift-legend i {
+  display: inline-block;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+}
+
+.dotting-shift-tooltip {
+  position: fixed;
+  z-index: 40;
+  width: max-content;
+  max-width: 17rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #17212b;
+  background: #fffffb;
+  box-shadow: 0 10px 28px rgba(32, 54, 62, 0.16);
+  color: #17212b;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  white-space: pre-line;
+  pointer-events: none;
+  opacity: 0;
+  transform: none;
+  transition: opacity 120ms ease-out;
+}
+
+.dotting-shift-tooltip.is-visible {
+  opacity: 1;
+}
+
+.dotting-shift-figure.has-chart-error figcaption::after {
+  content: " The static screenshot is shown because the interactive chart could not load.";
+}
+
+@media (max-width: 767px) {
+  .dotting-shift-figure {
+    width: calc(100vw - 1.5rem);
+    margin-top: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .dotting-shift-card {
+    padding: 0.9rem;
+  }
+
+  .dotting-shift-chart svg {
+    min-width: 38rem;
+  }
+
+  .dotting-shift-chart {
+    min-height: 20rem;
+  }
+
+  .dotting-shift-tooltip {
+    max-width: min(14rem, calc(100vw - 1.5rem));
+  }
+}
