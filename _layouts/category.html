@@ -8,9 +8,13 @@ layout: default
     <h1>{{ page.category | capitalize }}</h1>
 
     {% assign category_posts = site.posts | where: 'category', page.category %}
+    {% assign featured_projects = page.featured | default: empty %}
 
-    {% if category_posts.size > 0 %}
+    {% if category_posts.size > 0 or featured_projects.size > 0 %}
         <div class="visuals-grid">
+            {% for project in featured_projects %}
+                {% include featured-project-card.html project=project %}
+            {% endfor %}
             {% for post in category_posts %}
                 <article class="visual-item">
                     <a href="{{ post.url | relative_url }}">

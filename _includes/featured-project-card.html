@@ -1,0 +1,11 @@
+<!-- ABOUTME: Renders a manually featured project card for category pages. -->
+<!-- ABOUTME: Supports external project links without duplicating posts. -->
+<article class="visual-item">
+    <a href="{{ include.project.url }}" {% if include.project.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+        {% if include.project.thumbnail %}
+            <img src="{{ include.project.thumbnail | relative_url }}"
+                 alt="{{ include.project.title }}">
+        {% endif %}
+        <h3>{{ include.project.title }}</h3>
+    </a>
+</article>
