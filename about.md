@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "About"
+description: "About Fırat Gelbal, an analytics engineer interested in data visualization, storytelling, and travel."
 ---
 
 # About

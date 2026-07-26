@@ -38,6 +38,15 @@ jobs:
           JEKYLL_ENV: production
       - name: Generate Markdown files for AI agents
         run: ruby _scripts/generate_markdown.rb
+      - name: Audit generated site
+        run: bundle exec ruby _scripts/audit_site.rb _site --report reports/data/site-audit.json
+      - name: Upload site audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-audit
+          path: reports/data/site-audit.json
+          if-no-files-found: warn
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

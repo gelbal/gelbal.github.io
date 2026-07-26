@@ -1,0 +1,53 @@
+<!-- ABOUTME: Emits one Schema.org graph for people, pages, and articles. -->
+<!-- ABOUTME: Keeps structured metadata aligned with the canonical page data. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": {{ site.url | append: "/#person" | jsonify }},
+      "name": {{ site.author.name | default: site.title | jsonify }},
+      "url": {{ site.author.url | default: site.url | jsonify }}
+    },
+    {% if page.layout == "post" %}
+    {
+      "@type": "Article",
+      "@id": {{ page.url | absolute_url | append: "#article" | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "description": {{ include.description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "author": {
+        "@id": {{ site.url | append: "/#person" | jsonify }}
+      }{% if page.thumbnail %},
+      "image": {{ page.thumbnail | absolute_url | jsonify }}{% endif %}{% if page.tags %},
+      "keywords": {{ page.tags | jsonify }}{% endif %}
+    }
+    {% elsif page.title == "Home" %}
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: "/#website" | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "description": {{ include.description | jsonify }},
+      "url": {{ "/" | absolute_url | jsonify }},
+      "author": {
+        "@id": {{ site.url | append: "/#person" | jsonify }}
+      }
+    }
+    {% else %}
+    {
+      "@type": "WebPage",
+      "@id": {{ page.url | absolute_url | append: "#webpage" | jsonify }},
+      "name": {{ page.title | default: site.title | jsonify }},
+      "description": {{ include.description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "author": {
+        "@id": {{ site.url | append: "/#person" | jsonify }}
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>

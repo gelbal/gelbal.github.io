@@ -14,6 +14,7 @@ Fırat Gelbal's personal website featuring essays, visual work, and code project
 ```bash
 bundle install
 bundle exec jekyll serve --livereload
+make audit
 ```
 
 ### Architecture
@@ -35,3 +36,7 @@ Posts use category (`essay`, `visual`, `code`) and tags (`latest`, `favourite`, 
 ## Deployment
 
 Automated via GitHub Actions workflow (`.github/workflows/pages.yml`) on push to main branch. Site available at fgelbal.com.
+
+The repository's **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Enabling "Deploy from a branch" creates a second Pages deployment that can overwrite the workflow artifact and omit the generated Markdown alternatives.
+
+Every workflow build runs a deterministic post-build audit. The audit checks internal routes and assets, one-H1 and heading-order semantics, duplicate IDs, canonical and structured metadata, the search index, Markdown alternatives, `llms.txt` links, and accidental publication of local project files. Its severity-bucketed JSON report is uploaded as the `site-audit` workflow artifact.

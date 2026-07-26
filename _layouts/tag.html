@@ -12,7 +12,7 @@ layout: default
     {% if tag_posts.size > 0 %}
         <div class="content-grid tag-page-grid">
             {% for post in tag_posts %}
-                {% include content-card-compact.html post=post show_excerpt=true %}
+                {% include content-card-compact.html post=post show_excerpt=true heading_level=2 %}
             {% endfor %}
         </div>
 

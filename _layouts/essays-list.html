@@ -15,7 +15,7 @@ layout: default
                 <article class="essay-item">
                     <a href="{{ post.url | relative_url }}">
                         <div class="essay-content">
-                            <h3>{{ post.title }}</h3>
+                            <h2 class="card-title">{{ post.title }}</h2>
                             {% if post.excerpt %}
                                 <p class="essay-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
                             {% endif %}

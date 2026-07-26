@@ -54,5 +54,13 @@ vendor
 .claude/
 .specstory/
 .playwright-mcp/
+.agent-relay/
+.codex/
+.serena/
+.mcp.json
 .cursorindexingignore
 test-card.html
+package-lock.json
+
+# Generated site-audit reports
+/reports/data/*.json

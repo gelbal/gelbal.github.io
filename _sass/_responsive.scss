@@ -57,8 +57,8 @@
       gap: 0.3rem;
       
       a, .search-button {
-        font-size: 0.7rem;
-        padding: 0.25rem 0.4rem;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.45rem;
       }
     }
   }
@@ -69,7 +69,7 @@
   header {
     gap: 0.25rem;
     
-    h1 a {
+    .site-title a {
       font-size: 1.3rem;
     }
     
@@ -77,8 +77,8 @@
       gap: 0.25rem;
       
       a, .search-button {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.35rem;
+        font-size: 0.72rem;
+        padding: 0.35rem 0.4rem;
       }
     }
   }
@@ -123,7 +123,7 @@
     }
     
     .card-content {
-      h3 {
+      .card-title {
         font-size: 0.9rem;
         line-height: 1.2;
       }
@@ -211,7 +211,7 @@
         align-items: flex-start;
         
         &:hover {
-          .card-content h3 {
+          .card-content .card-title {
             color: var(--accent-color);
           }
           
@@ -224,7 +224,7 @@
       .card-content {
         flex: 1;
         
-        h3 {
+        .card-title {
           margin: 0 0 0.8rem 0;
           font-size: 1.4rem;
           font-weight: 600;
@@ -288,7 +288,7 @@
       .card-content {
         padding: 0.75rem;
         
-        h3 {
+        .card-title {
           font-size: 1rem;
         }
         

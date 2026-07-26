@@ -18,7 +18,7 @@ header {
   flex-wrap: wrap;
   gap: 1rem;
   
-  h1 {
+  .site-title {
     margin: 0;
     
     a {
@@ -46,10 +46,13 @@ header {
       white-space: nowrap;
       text-decoration: none;
       padding: 0.4rem 0.6rem;
+      min-height: 44px;
       border-radius: 4px;
       transition: all 0.2s ease;
       text-transform: uppercase;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
       
       &:hover,
       &:focus {
@@ -76,11 +79,14 @@ header {
       white-space: nowrap;
       text-decoration: none;
       padding: 0.4rem 0.6rem;
+      min-height: 44px;
       border-radius: 4px;
       transition: all 0.2s ease;
       cursor: pointer;
       text-transform: uppercase;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
       
       &:hover,
       &:focus {
@@ -113,6 +119,7 @@ header {
     color: var(--text-color);
     transition: all 0.2s ease;
     cursor: pointer;
+    text-align: center;
     
     &:hover,
     &:focus {
@@ -189,7 +196,7 @@ section {
   .card-content {
     padding: 1rem;
     
-    h3 {
+    .card-title {
       margin: 0 0 0.5rem 0;
       font-size: 1.1rem;
     }
@@ -214,7 +221,7 @@ section {
   .card-content {
     padding: 0.75rem;
     
-    h3 {
+    .card-title {
       font-size: 0.95rem;
       margin: 0 0 0.25rem 0;
       line-height: 1.3;
@@ -252,7 +259,7 @@ section {
   .card-content {
     flex: 1;
     
-    h3 {
+    .card-title {
       margin: 0 0 0.5rem 0;
       font-size: 1rem;
       font-weight: 600;
@@ -354,7 +361,7 @@ section {
 .tag-page-grid {
   .content-card-compact {
     .card-content {
-      h3 {
+      .card-title {
         color: var(--text-color) !important;
         
         &:hover {
@@ -498,7 +505,7 @@ section {
       }
     }
     
-    h3 {
+    .card-title {
       margin: 0;
       font-size: 1.2rem;
       font-weight: 600;
@@ -531,7 +538,7 @@ section {
       align-items: flex-start;
       
       &:hover {
-        .essay-content h3 {
+        .essay-content .card-title {
           color: var(--accent-color);
         }
         
@@ -544,7 +551,7 @@ section {
     .essay-content {
       flex: 1;
       
-      h3 {
+      .card-title {
         margin: 0 0 0.8rem 0;
         font-size: 1.4rem;
         font-weight: 600;
@@ -664,9 +671,16 @@ section {
         background: none;
         font-size: 1.1rem;
         color: var(--text-color);
+        min-height: 44px;
         
         &::placeholder {
           color: var(--text-light);
+        }
+
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-decoration {
+          appearance: none;
+          -webkit-appearance: none;
         }
       }
       
@@ -677,6 +691,8 @@ section {
         color: var(--text-light);
         cursor: pointer;
         padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
         border-radius: 4px;
         transition: all 0.2s ease;
         
@@ -700,6 +716,7 @@ section {
         margin: 0.5rem 0 1rem 0;
         line-height: 1.5;
         font-size: 0.9rem;
+        text-align: left;
       }
       
       .search-meta {
@@ -718,7 +735,7 @@ section {
         }
       }
       
-      p {
+      > p {
         text-align: center;
         color: var(--text-light);
         margin: 2rem 0;
