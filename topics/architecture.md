@@ -1,5 +1,0 @@
----
-layout: tag
-tag: architecture
-title: Architecture
----
