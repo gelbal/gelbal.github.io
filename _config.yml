@@ -44,9 +44,20 @@ exclude:
   - Gemfile.lock
   - README.md
   - AGENTS.md
+  - CLAUDE.local.md
+  - PRODUCT.md
+  - DESIGN.md
+  - package-lock.json
+  - .DS_Store
+  - .agents/
+  - .codex/
+  - .serena/
+  - .agent-relay/
+  - .mcp.json
   - .claude/
   - .playwright-mcp/
   - .specstory/
+  - reports/
   - vendor/
   - _scripts/
   - Makefile

@@ -1,11 +1,22 @@
 <!-- ABOUTME: Site header include with title and navigation placeholder -->
 <!-- ABOUTME: Contains main site branding and navigation menu with responsive layout -->
 <header role="banner">
-    <h1><a href="{{ '/' | relative_url }}" aria-label="{{ site.title }} - Home">{{ site.title }}</a></h1>
+    {% if page.title == "Home" %}
+        <h1 class="site-title"><a href="{{ '/' | relative_url }}" aria-label="{{ site.title }} - Home">{{ site.title }}</a></h1>
+    {% else %}
+        <p class="site-title"><a href="{{ '/' | relative_url }}" aria-label="{{ site.title }} - Home">{{ site.title }}</a></p>
+    {% endif %}
     <nav role="navigation" aria-label="Main navigation">
         {% for item in site.data.navigation %}
             <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
         {% endfor %}
-        <button id="search-toggle" class="search-button" aria-label="Open search">Search</button>
+        <button type="button"
+                id="search-toggle"
+                class="search-button"
+                data-search-trigger
+                aria-label="Open search"
+                aria-haspopup="dialog"
+                aria-controls="search-modal"
+                aria-expanded="false">Search</button>
     </nav>
 </header>

@@ -8,12 +8,12 @@ layout: default
 
 <div class="home-sections">
     <section class="latest-section">
-        {% assign latest_posts = site.posts | where_exp: "post", "post.tags contains 'latest'" | limit: site.homepage_latest_count %}
+        {% assign latest_posts = site.posts | where_exp: "post", "post.tags contains 'latest'" %}
         
         {% if latest_posts.size > 0 %}
             <h2>Latest</h2>
             <div class="horizontal-card-list">
-                {% for post in latest_posts %}
+                {% for post in latest_posts limit: site.homepage_latest_count %}
                     {% include horizontal-card-compact.html post=post show_excerpt=true %}
                 {% endfor %}
             </div>
@@ -26,12 +26,12 @@ layout: default
     </section>
 
     <section class="favourites-section">
-        {% assign favourite_posts = site.posts | where_exp: "post", "post.tags contains 'favourite'" | limit: site.homepage_favourites_count %}
+        {% assign favourite_posts = site.posts | where_exp: "post", "post.tags contains 'favourite'" %}
         
         {% if favourite_posts.size > 0 %}
             <h2>Favourites</h2>
             <div class="horizontal-card-list">
-                {% for post in favourite_posts %}
+                {% for post in favourite_posts limit: site.homepage_favourites_count %}
                     {% include horizontal-card-compact.html post=post show_excerpt=true %}
                 {% endfor %}
             </div>

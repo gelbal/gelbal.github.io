@@ -1,0 +1,35 @@
+# ABOUTME: Builds and audits proposed site changes without deploying them.
+# ABOUTME: Uploads the structured audit report for pull-request review.
+
+name: Audit Jekyll site
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+          cache-version: 0
+      - name: Build and audit
+        run: make audit
+        env:
+          JEKYLL_ENV: production
+      - name: Upload site audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-audit
+          path: reports/data/site-audit.json
+          if-no-files-found: warn

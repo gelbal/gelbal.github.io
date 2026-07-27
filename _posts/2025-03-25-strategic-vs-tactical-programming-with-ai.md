@@ -27,7 +27,7 @@ Tactical patterns compound complexity, while strategic foundations create compou
 
 My experience revealed both sides:
 
-### **The 80/20 Advantage: Rapid Prototyping**
+## **The 80/20 Advantage: Rapid Prototyping**
 
 AI delivered 80% of solutions in hours, particularly when:
 
@@ -38,7 +38,7 @@ AI delivered 80% of solutions in hours, particularly when:
 
 This rapid prototyping validated my approach in days rather than weeks, allowing me to get early feedback before investing in refinement.
 
-### **The Challenge: From 80% to 100%**
+## **The Challenge: From 80% to 100%**
 
 While AI excelled at reaching 80% completion quickly, the path to 100% revealed challenges:
 
