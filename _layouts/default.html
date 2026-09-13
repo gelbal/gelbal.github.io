@@ -53,19 +53,16 @@
             {{ content }}
         </main>
 
-        {% unless page.url == '/about/' or page.url == '/search/' %}
-        <div class="bottom-search">
+        <footer>
+            <p>{{ site.title }} &nbsp;|&nbsp; fgelbal.com &nbsp;|&nbsp; <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+            {% unless page.url == '/about/' or page.url == '/search/' %}
             <button type="button"
-                    class="bottom-search-input"
+                    class="footer-search"
                     data-search-trigger
                     aria-haspopup="dialog"
                     aria-controls="search-modal"
                     aria-expanded="false">Search the site</button>
-        </div>
-        {% endunless %}
-
-        <footer>
-            <p>{{ site.title }} &nbsp;|&nbsp; fgelbal.com &nbsp;|&nbsp; <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+            {% endunless %}
         </footer>
     </div>
 

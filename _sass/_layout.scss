@@ -103,7 +103,7 @@ header {
   }
 }
 
-// Bottom search bar
+// Prominent search trigger on the search page
 .bottom-search {
   margin: 4rem 0 2rem 0;
   text-align: center;
@@ -136,12 +136,39 @@ header {
 
 // Footer
 footer {
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding: 2rem 0;
   border-top: 1px solid var(--border-color);
   color: var(--text-light);
   font-size: 0.9rem;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+
+  p {
+    margin: 0;
+  }
+
+  // Compact search trigger in the footer, coloured like the footer's RSS link
+  .footer-search {
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--accent-color);
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--accent-color);
+    }
+  }
 }
 
 // Sections
