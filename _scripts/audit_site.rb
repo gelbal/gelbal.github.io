@@ -14,6 +14,8 @@ require "uri"
 ROOT_DIR = File.expand_path("..", __dir__)
 DEFAULT_SITE_DIR = File.join(ROOT_DIR, "_site")
 SEVERITIES = %w[critical high medium low].freeze
+# Pages whose footer omits the search trigger, matching the condition in _layouts/default.html.
+FOOTER_SEARCH_EXEMPT_PAGES = %w[/about/ /search/].freeze
 
 def add_issue(issues, severity, category, message, page)
   issues.fetch(severity) << {
@@ -80,6 +82,19 @@ Dir.glob(File.join(site_dir, "**", "*.html")).sort.each do |file|
 
   document.css("img").each do |image|
     add_issue(issues, "medium", "Accessibility", "Image is missing an alt attribute.", url) unless image.key?("alt")
+  end
+
+  dialog_ids = document.css('[role="dialog"]').map { |dialog| dialog["id"] }.compact
+  document.css("[data-search-trigger]").each do |trigger|
+    next if trigger.name == "button" && dialog_ids.include?(trigger["aria-controls"])
+
+    add_issue(issues, "high", "Search", "Search trigger is not a button controlling a dialog on the page.", url)
+  end
+
+  footer_search_triggers = document.css("footer [data-search-trigger]").length
+  expected_footer_search_triggers = FOOTER_SEARCH_EXEMPT_PAGES.include?(url) ? 0 : 1
+  unless footer_search_triggers == expected_footer_search_triggers
+    add_issue(issues, "medium", "Search", "Expected #{expected_footer_search_triggers} footer search triggers; found #{footer_search_triggers}.", url)
   end
 
   canonicals = document.css('link[rel~="canonical"]')
