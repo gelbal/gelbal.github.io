@@ -4,7 +4,7 @@ thumbnail: "/assets/images/2024-12-01-data-blog-taxonomy/taxonomy_org_diagram.pn
 category: "code"
 tags: ["favourite", "Python", "AI agents", "Natural Language Processing"]
 date: 2024-12-01
-excerpt: "A technical deep-dive into building scalable web applications with modern JavaScript frameworks and best practices."
+excerpt: "How I reorganized data.blog’s taxonomy with Python notebooks: sentence embeddings and clustering to settle on 10 categories and 50 tags, Claude to tag each post, and internal links between related posts."
 ---
 
 [Here are the Python notebooks](https://github.com/gelbal/wordpress-blog-metadata-organizer) that illustrate how I organized data.blog's taxonomy.
