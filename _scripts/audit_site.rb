@@ -16,6 +16,8 @@ DEFAULT_SITE_DIR = File.join(ROOT_DIR, "_site")
 SEVERITIES = %w[critical high medium low].freeze
 # Pages whose footer omits the search trigger, matching the condition in _layouts/default.html.
 FOOTER_SEARCH_EXEMPT_PAGES = %w[/about/ /search/].freeze
+# AI training crawlers that robots.txt names, so the training policy is stated rather than implied by the wildcard group.
+AI_TRAINING_CRAWLERS = %w[GPTBot ClaudeBot Google-Extended Applebot-Extended CCBot meta-externalagent Amazonbot Bytespider].freeze
 
 def add_issue(issues, severity, category, message, page)
   issues.fetch(severity) << {
@@ -139,6 +141,18 @@ if File.file?(llms_path)
   end
 else
   add_issue(issues, "critical", "Machine Readability", "llms.txt is missing.", "/llms.txt")
+end
+
+robots_path = File.join(site_dir, "robots.txt")
+if File.file?(robots_path)
+  robots = File.read(robots_path, encoding: "utf-8")
+  unnamed_crawlers = AI_TRAINING_CRAWLERS - robots.scan(/^User-agent:\s*(\S+)/i).flatten
+  unless unnamed_crawlers.empty?
+    add_issue(issues, "medium", "Machine Readability", "robots.txt states no AI training policy for: #{unnamed_crawlers.join(", ")}.", "/robots.txt")
+  end
+  add_issue(issues, "critical", "Machine Readability", "robots.txt disallows the whole site.", "/robots.txt") if robots.match?(%r{^Disallow:\s*/\s*$}i)
+else
+  add_issue(issues, "critical", "Machine Readability", "robots.txt is missing.", "/robots.txt")
 end
 
 forbidden_names = %w[.DS_Store .mcp.json AGENTS.md CLAUDE.local.md DESIGN.md PRODUCT.md package-lock.json]
