@@ -7,7 +7,7 @@ url: "https://fgelbal.com"
 baseurl: ""
 
 # Homepage settings
-homepage_latest_count: 3
+homepage_latest_count: 4
 homepage_favourites_count: 3
 
 # Build settings
